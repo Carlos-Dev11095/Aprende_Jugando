@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>{%block titulo%}{%endblock%}</title>
+    {%load static%}
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <!--Favicon-->
+    <link
+      rel="shortcut icon"
+      href="{% static 'proye/images/favicon.ico'%}"
+      type="image/x-icon"
+    />
+    <link
+      rel="icon"
+      href="{% static 'proye/images/favicon.ico'%}"
+      type="image/x-icon"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="{% static 'images/apple-touch-icon.png'%}"
+    />
+    <!-- THEME CSS
+	================================================== -->
+    <!-- Bootstrap -->
+    <link
+      rel="stylesheet"
+      href="{% static 'proye/plugins/bootstrap/css/bootstrap.min.css'%}"
+    />
+    <!-- FontAwesome -->
+    <link
+      rel="stylesheet"
+      href="{% static 'proye/plugins/font-awesome/css/font-awesome.min.css'%}"
+    />
+    <!-- Slick Carousel -->
+    <link
+      rel="stylesheet"
+      href="{% static 'proye/plugins/slick-carousel/slick.css'%}"
+    />
+    <link
+      rel="stylesheet"
+      href="{% static 'proye/plugins/slick-carousel/slick-theme.css'%}"
+    />
+    <!-- manin stylesheet -->
+    <link
+      rel="stylesheet"
+      href="{% static 'proye/css/style.css'%}"
+      type="text/css"
+    />
+    
+  </head>
+  <body>
+    <div class="trending-bar-dark hidden-xs ">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-6">
+            <h3 class="trending-bar-title">Productos Destacados</h3>
+            <div class="trending-news-slider">
+              {% for productodes in productodes %} 
+                       
+                <div class="item">
+                  <div class="post-content">
+                    <h2 class="post-title title-sm">
+                      <a href="{% url 'Producto' productodes.id%}">{{productodes.nombre}}</a>
+                    </h2>
+                  </div>
+                </div>
+              {%endfor%}
+              
+            </div>
+          </div>
+           
+          <div
+            class="col-md-12 col-sm-12 col-xs-12 top-nav-social-lists text-lg-right col-lg-4 ml-lg-auto"
+          >
+            <ul class="list-unstyled mt-4 mt-lg-0">
+              <li>
+                <a href="#">
+                  <span class="social-icon">
+                    <i class="fa fa-facebook-f"></i>
+                  </span>
+                </a>
+                <a href="#">
+                  <span class="social-icon">
+                    <i class="fa fa-twitter"></i>
+                  </span>
+                </a>
+                <a href="#">
+                  <span class="social-icon">
+                    <i class="fa fa-google-plus"></i>
+                  </span>
+                </a>
+                <a href="#">
+                  <span class="social-icon">
+                    <i class="fa fa-youtube"></i>
+                  </span>
+                </a>
+                <a href="#">
+                  <span class="social-icon">
+                    <i class="fa fa-linkedin"></i>
+                  </span>
+                </a>
+                <a href="#">
+                  <span class="social-icon">
+                    <i class="fa fa-pinterest-p"></i>
+                  </span>
+                </a>
+                <a href="#">
+                  <span class="social-icon">
+                    <i class="fa fa-rss"></i>
+                  </span>
+                </a>
+                <a href="#">
+                  <span class="social-icon">
+                    <i class="fa fa-github"></i>
+                  </span>
+                </a>
+                <a href="#">
+                  <span class="social-icon">
+                    <i class="fa fa-reddit-alien"></i>
+                  </span>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    {% comment %} <header class="header-navigation d-none d-lg-block">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-xs-12 col-sm-3 col-md-3"> {% endcomment %}
+            <!-- Logo -->
+
+            {% comment %} <div class="logo">
+              <a href="{% url 'Principal' %}">
+                <img src="{%block rutalogo%} {%endblock%}"/>
+                <!-- Replace Logo Here -->
+              </a>
+            </div> {% endcomment %}
+            <!-- End Logo -->
+          {% comment %} </div> {% endcomment %}
+          {% comment %} <div class="col-xs-12 col-sm-9 col-md-9">
+            <div class="top-ad-banner float-right">
+              <a href="#">
+                <img
+                  src="{%block rutaads%}{%endblock%}"
+                  class="img-fluid"
+                  alt="banner-ads"
+                />
+              </a>
+            </div>
+          </div> {% endcomment %}
+        {% comment %} </div>
+      </div>
+    </header> {% endcomment %}
+    <!-- temp-->
+    <div class="main-navbar clearfix bgligth">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12">
+            <nav class="navbar navbar-expand-lg site-main-nav navigation">
+              <div class="logo">
+                <a href="{% url 'Principal' %}">
+                  <img src="{%block rutalogo%} {%endblock%}"/>
+                  <!-- Replace Logo Here -->
+                </a>
+              </div>
+              {% comment %} <a class="navbar-brand d-lg-none" href="index.html">
+                <img
+                  src="static/proye/images/logos/footer-logo.png"
+                  alt="asdasd"
+                />
+              </a> {% endcomment %}
+
+              <button
+                class="navbar-toggler"
+                type="button"
+                data-toggle="collapse"
+                data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent"
+                aria-expanded="false"
+                aria-label="Toggle navigation"
+              >
+                <span class="fa fa-bars"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                  <li class="nav-item dropdown">
+                    <a
+                      class="nav-link dropdown-toggle"
+                      href="#"
+                      role="button"
+                      data-toggle="dropdown"
+                      aria-haspopup="true"
+                      aria-expanded="false"
+                    >
+                      Marcas</a>
+                    <div class="dropdown-menu">
+                      {% for marcas in marcas %} 
+                        <a class="dropdown-item" href="{% url 'Filtros' marcas.id%}">{{marcas.marca}}</a>
+                        
+                      {%endfor%}
+                    </div>
+                  </li>
+                  <li class="nav-item dropdown">
+                    <a
+                      class="nav-link dropdown-toggle"
+                      href="#"
+                      role="button"
+                      data-toggle="dropdown"
+                      aria-haspopup="true"
+                      aria-expanded="false"
+                    >
+                      Edades
+                    </a>
+                    <div class="dropdown-menu">
+                      {% for edades in edades %} 
+                        <a class="dropdown-item" href="{% url 'Filtrose' edades.id%}">{{edades.rangoedad}}</a>
+                        
+                      {%endfor%}
+                      
+                    </div>
+                  </li>
+                  <li class="nav-item dropdown">
+                    <a
+                      class="nav-link dropdown-toggle"
+                      href="#"
+                      role="button"
+                      data-toggle="dropdown"
+                      aria-haspopup="true"
+                      aria-expanded="false"
+                    >
+                      Categorías
+                    </a>
+                    <div class="dropdown-menu">
+                      {% for catego in catego %} 
+                        <a class="dropdown-item" href="{% url 'Filtrosc' catego.id%}">{{catego.catego}}</a>
+                        
+                      {%endfor%}
+                    </div>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="{%url 'Contacto'%}">Contacto</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="{%url 'sign_in'%}">Sing in</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="{%url 'sign_up'%}">Sing up</a>
+                  </li>
+                </ul>
+                <div class="nav-search ml-auto d-none d-lg-block">
+                  <span id="search">
+                    <i class="fa fa-search"></i>
+                  </span>
+                </div>
+              </div>
+            </nav>
+          </div>
+        </div>
+      </div>
+      <form class="site-search" method="get">
+        <input
+          type="text"
+          id="searchInput"
+          name="site_search"
+          placeholder="Ingresa tu busqueda"
+          autofocus=""
+        />
+        <div class="search-close">
+          <span class="close-search">
+            <i class="fa fa-times"></i>
+          </span>
+        </div>
+      </form>
+    </div>
+    {% block body %}{% endblock %}
+    <div class="py-20"></div>
+
+    <footer class="footer footer-main">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-md-8 col-sm-12 col-lg-6 text-center">
+            <a href="{% url 'Principal' %}"
+              ><img
+                src="../static/proye/images/logos/logo.png"
+                class="img-fluid"
+            /></a>
+            <p class="mt-4 pancha">Dirección: Calle Dr Olvera 15, Doctores, Cuauhtémoc, 06720 Ciudad de México, CDMX</p>
+
+            <ul class="list-inline footer-social">
+              <li class="li list-inline-item">
+                <a href="https://www.facebook.com/"
+                  ><i class="fa fa-facebook"></i
+                ></a>
+              </li>
+              <li class="li list-inline-item">
+                <a href="https://twitter.com/"
+                  ><i class="fa fa-twitter"></i
+                ></a>
+              </li>
+              <li class="li list-inline-item">
+                <a href="#"><i class="fa fa-linkedin"></i></a>
+              </li>
+              <li class="li list-inline-item">
+                <a href="#"><i class="fa fa-pinterest"></i></a>
+              </li>
+              <li class="li list-inline-item">
+                <a href="#"><i class="fa fa-rss"></i></a>
+              </li>
+              <li class="li list-inline-item">
+                <a href="#"><i class="fa fa-youtube"></i></a>
+              </li>
+            </ul>
+
+            <div class="copyright-text text-center">
+              <p class="mb-0 pancha">
+                Catalogo extraoficial mujm
+                <a href="#" target="_blank">SA de CV</a>
+              </p>
+            </div>
+          </div>
+
+          <div class="scroll-to-top">
+            <button class="btn btn-primary" title="Back to Top">
+              <i class="fa fa-angle-up"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- THEME JAVASCRIPT FILES
+================================================== -->
+    <!-- initialize jQuery Library -->
+    <script src="{% static 'proye/plugins/jquery/jquery.js'%}"></script>
+    <!-- Bootstrap jQuery -->
+    <script src="{% static 'proye/plugins/bootstrap/js/bootstrap.min.js'%}"></script>
+    <!-- Slick Slider -->
+    <script src="{% static 'proye/plugins/slick-carousel/slick.min.js'%}"></script>
+    <!-- Google Map -->
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCC72vZw-6tGqFyRhhg5CkF2fqfILn2Tsw"></script>
+    <script src="{% static 'proye/plugins/google-map/gmap.js'%}"></script>
+    <!-- main js -->
+    <script src="{% static 'proye/js/custom.js'%}"></script>
+  </body>
+</html>

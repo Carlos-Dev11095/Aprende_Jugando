@@ -1,0 +1,370 @@
+{% extends "proye/plantilla.html"%} 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {%block titulo%}TituloIndex{% endblock %}
+</head>
+<body>
+{%block rutalogo%}static/proye/images/logos/logo.png{%endblock%}
+{%block rutaads%}static/proye/images/news/ad-pro.png{%endblock%}
+{%block body%} 
+
+<div class="py-30"></div>
+    <section class="block-wrapper">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+            <div class="news-style-one">
+              {% if user.is_authenticated %}
+                <h1>Hola {{ user.username }}</h1>
+                <a href="{% url 'sign_out' %}">Cerrar sesión</a>
+              {% else %}
+                  <a href="{% url 'sign_up' %}">Registrate</a>
+              {% endif %}
+              <h3 class="news-title">
+                <span>Productos destacados</span>
+              </h3>
+            <div class="news-style-one-slide">
+              {% for productodes in productodes %}
+                <div class="item">
+                  <div class="post-block-wrapper clearfix mb-5">
+                    <div class="post-thumbnail">
+                      <a href="{%url 'Producto' productodes.id%}">
+                        <img
+                          class="img-fluid"
+                          src="{{productodes.imagen.url}}"
+                          alt="post-image"
+                        />
+                      </a>
+                    </div>
+                    <div class="post-content">
+                      <h2 class="post-title mt-3">
+                        <a href="{%url 'Producto' productodes.id %}">{{productodes.nombre}}</a>
+                      </h2>
+                      <div class="post-meta mb-2">
+                        <span class="posted-time"
+                          ><i class="fa mr-2"></i>{{productodes.marca}}</span
+                        >
+                        <span class="post-author">
+                            {{productodes.categoria}}
+                        </span>
+                      </div>
+                      <p>
+                        {{productodes.descripcion}}
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              {% endfor %}
+            </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="news-style-four bg-light section-padding">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-4 col-md-6">
+            <div class="block">
+              <h3 class="news-title">
+                <span>{{marcasd8.marca}}</span>
+              </h3>
+              <div class="post-overlay-wrapper clearfix">
+                <div class="post-thumbnail">
+                  <img
+                    class="img-fluid"
+                    src="{{marcasd8.imagenmarca.url}}"
+                    alt="post-thumbnail"
+                  />
+                </div>
+
+                <div class="post-content">
+                  <h2 class="post-title">
+                    <a href="{%url 'Producto' 1%}"
+                      >estos productos no possen marca</a
+                    >
+                  </h2>
+                  <div class="post-meta white">
+                    <span class="posted-time">Blanca</span>
+                    <span class="pull-right">
+                      <i class="fa fa-comments"></i>
+                      <a href="single-post.html#comments">05</a>
+                    </span>
+                  </div>
+                </div>
+               </div>
+            
+              <div class="post-list-block">
+                 {% for productoj in productoj %}
+                    <div class="post-block-wrapper post-float clearfix">
+                      <div class="post-thumbnail">
+                        <img
+                          class="img-fluid"
+                          src="{{productoj.imagen.url}}"
+                          alt="post-thumbnail"
+                        />
+                      </div>
+                    
+                      <div class="post-content">
+                        <h2 class="post-title title-sm">
+                          <a href="{%url 'Producto' productoj.id%}">{{productoj.nombre}}</a>
+                        </h2>
+                        <div class="post-meta">
+                          <span class="posted-time">{{productoj.marca}}</span>
+                        </div>
+                      </div>
+                    </div>
+                 {% endfor %}
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6">
+            <div class="block">
+              <h3 class="news-title">
+                <span>{{marcasd.marca}}</span>
+              </h3>
+              <div class="post-overlay-wrapper clearfix">
+                <div class="post-thumbnail">
+                  <img
+                    class="img-fluid"
+                    src="{{marcasd.imagenmarca.url}}"
+                    alt="post-thumbnail"
+                  />
+                </div>
+
+                <div class="post-content">
+                  <h2 class="post-title">
+                    <a href="{%url 'Producto' 2%}"></a>
+                  </h2>
+                  <div class="post-meta white">
+                    <span class="posted-time">Blanca</span>
+                    </span>
+                    <span class="pull-right">
+                      <i class="fa fa-comments"></i>
+                      <a href="single-post.html#comments">10</a>
+                    </span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="post-list-block">
+                
+                {% for productoj in productoj %}
+                    <div class="post-block-wrapper post-float clearfix">
+                      <div class="post-thumbnail">
+                        <img
+                          class="img-fluid"
+                          src="{{productoj.imagen.url}}"
+                          alt="post-thumbnail"
+                        />
+                      </div>
+                    
+                      <div class="post-content">
+                        <h2 class="post-title title-sm">
+                          <a href="{%url 'Producto' productoj.id%}">{{productoj.nombre}}</a>
+                        </h2>
+                        <div class="post-meta">
+                          <span class="posted-time">{{productoj.marca}}</span>
+                        </div>
+                      </div>
+                    </div>
+                 {% endfor %}
+
+               
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6">
+            <div class="block">
+              <h3 class="news-title">
+                <span>{{marcasd2.marca}}</span>
+              </h3>
+              <div class="post-overlay-wrapper clearfix">
+                <div class="post-thumbnail">
+                  <img
+                    class="img-fluid"
+                    src="{{marcasd2.imagenmarca.url}}"
+                    alt="post-thumbnail"
+                  />
+                </div>
+
+                <div class="post-content">
+                  <h2 class="post-title">
+                    <a href="{%url 'Producto' 3%}"
+                      ></a
+                    >
+                  </h2>
+                  <div class="post-meta white">
+                    <span class="posted-time">Fisherprice</span>
+                    <span class="pull-right">
+                      <i class="fa fa-comments"></i>
+                      <a href="single-post.html#comments">30</a>
+                    </span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="post-list-block">
+                {% for productoj in productoj %}
+                    <div class="post-block-wrapper post-float clearfix">
+                      <div class="post-thumbnail">
+                        <img
+                          class="img-fluid"
+                          src="{{productoj.imagen.url}}"
+                          alt="post-thumbnail"
+                        />
+                      </div>
+                    
+                      <div class="post-content">
+                        <h2 class="post-title title-sm">
+                          <a href="{%url 'Producto' productoj.id%}">{{productoj.nombre}}</a>
+                        </h2>
+                        <div class="post-meta">
+                          <span class="posted-time">{{productoj.marca}}</span>
+                        </div>
+                      </div>
+                    </div>
+                 {% endfor %}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-padding">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-md-12 col-sm-12 col-xs-12">
+            <section class="news-style-four bg-light section-padding">
+              <div class="container">
+                <div class="row">
+                  <div class="col-lg-4 col-md-6">
+                    <div class="block">
+                      <h3 class="news-title">
+                        <span>Mejores marcas:</span>
+                      </h3>
+                          
+                      <div class="post-list-block">
+                        {% for marcaid in marcaid %}
+
+                          <div class="post-block-wrapper post-float clearfix">
+                            <div class="post-thumbnail">
+                              <img
+                                class="img-fluid"
+                                src="{{marcaid.imagenmarca.url}}"
+                                alt="post-thumbnail"
+                              />
+                            </div>
+                            <div class="post-content">
+                              <h2 class="post-title title-sm">
+                                <a href="single-post.html">{{marcaid.marca}}</a>
+                              </h2>
+                            </div>
+                          </div>
+                        {% endfor %}
+                        
+                      </div>
+
+                    </div>
+                  </div>
+                  <div class="col-lg-4 col-md-6">
+                    <div class="block">
+                      <h3 class="news-title">
+                        <span>.</span>
+                      </h3>
+
+                      <div class="post-list-block">
+                         {% for marcaid2 in marcaid2 %}
+
+                          <div class="post-block-wrapper post-float clearfix">
+                            <div class="post-thumbnail">
+                              <img
+                                class="img-fluid"
+                                src="{{marcaid2.imagenmarca.url}}"
+                                alt="post-thumbnail"
+                              />
+                            </div>
+                            <div class="post-content">
+                              <h2 class="post-title title-sm">
+                                <a href="single-post.html">{{marcaid2.marca}}</a>
+                              </h2>
+                            </div>
+                          </div>
+                        {% endfor %}
+                        
+                      
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-lg-4 col-md-6">
+                    <div class="block">
+                      <h3 class="news-title">
+                        <span>.</span>
+                      </h3>
+
+                      <div class="post-list-block">
+                        {% for marcaid3 in marcaid3 %}
+
+                        <div class="post-block-wrapper post-float clearfix">
+                          <div class="post-thumbnail">
+                            <img
+                              class="img-fluid"
+                              src="{{marcaid3.imagenmarca.url}}"
+                              alt="post-thumbnail"
+                            />
+                          </div>
+                          <div class="post-content">
+                            <h2 class="post-title title-sm">
+                              <a href="single-post.html">{{marcaid3.marca}}</a>
+                            </h2>
+                          </div>
+                        </div>
+                      {% endfor %}
+                      
+                    
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
+            </section>
+          </div>
+          <div class="col-lg-4 col-md-8 col-sm-12 col-xs-12">
+            <div class="sidebar sidebar-right">
+              <div class="widget">
+                <h3 class="news-title">
+                  <span>Top Productos</span>
+                </h3>
+                <div class="post-list-block">
+                  <div class="review-post-list">
+                    {% for productodes in productodes %}
+                      <div class="top-author">
+                        <img
+                          src="{{productodes.imagen.url}}"
+                          alt="author-thumb"
+                        />
+                        <div class="info">
+                          <h4 class="name">
+                            <a href="{%url 'Producto' productodes.id%}">{{productodes.nombre}}</a>
+                          </h4>
+                          <ul class="list-unstyled">
+                            <li>{{productodes.rangoedad}}</li>
+                          </ul>
+                        </div>
+                      </div>
+                    {% endfor %}
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+{%endblock%}
+</body>
+</html>

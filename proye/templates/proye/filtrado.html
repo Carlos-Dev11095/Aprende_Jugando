@@ -1,0 +1,64 @@
+{% extends "proye/plantilla.html" %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {%block titulo%}Tituloproducto{% endblock %}
+</head>
+<body>
+    {%block rutalogo%}../static/proye/images/logos/logo.png{%endblock%}
+    {%block rutaads%}../static/proye/images/news/ad-pro.png{%endblock%}
+    {%block logobajo%}../static/proye/images/logos/footer-logo.png{%endblock%}
+{%block body%}
+
+<section class="news-style-four bg-light section-padding">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-4 col-md-6">
+          <div class="block">
+            <h3 class="news-title">
+              <span>.</span>
+            </h3>
+                  {% for producto in producto %}
+
+                    <div class="post-list-block">
+                      <div class="post-block-wrapper post-float clearfix">
+                        <div class="post-thumbnail">
+                          <img
+                            class="img-fluid"
+                            src="{{producto.imagen.url}}"
+                            alt="post-thumbnail"
+                          />
+                        </div>
+
+                        <div class="post-content">
+                          <h2 class="post-title title-sm">
+                            <a href="single-post.html">{{producto.nombre}}</a>
+                          </h2>
+                          <div class="post-meta">
+                            <span class="posted-time">{{producto.marca}}</span>
+                          </div>
+                          <div class="post-meta">
+                            <span class="posted-time">{{producto.rangoedad}}</span>
+                          </div>
+                          <div class="post-meta">
+                            <span class="posted-time">{{producto.categoria}}</span>
+                          </div>
+                        </div>
+                      </div>
+                  {% endfor %}
+
+              
+
+              
+            </div>
+          </div>
+        </div>
+        
+       
+      </div>
+    </div>
+  </section>
+
+{%endblock%}
+</body>
+</html>

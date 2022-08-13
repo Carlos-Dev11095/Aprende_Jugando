@@ -1,0 +1,110 @@
+
+{% extends "proye/plantilla.html" %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {%block titulo%}Tituloproducto{% endblock %}
+</head>
+<body>
+    {%block rutalogo%}../static/proye/images/logos/logo.png{%endblock%}
+    {%block rutaads%}../static/proye/images/news/ad-pro.png{%endblock%}
+    {%block logobajo%}../static/proye/images/logos/footer-logo.png{%endblock%}
+    {%block body%}
+    <section class="block-wrapper">
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+              <div class="news-style-one">
+                <h3 class="news-title">
+                </h3>
+                <div class="news-style-one-slide">
+                  
+                    <div class="item">
+                      <div class="post-block-wrapper clearfix mb-5">
+                        <div class="post-thumbnail">
+                          <a href="single-post.htm">
+                            <img
+                              class="img-fluid"
+                              src="{{producto.imagen.url}}"
+                              alt="post-image"
+                            />
+                          </a>
+                        </div>
+                        <div class="post-content">
+                          <h2 class="post-title mt-3">
+                            <a href="single-post.html"
+                              >{{producto.nombre}}</a
+                            >
+                          </h2>
+                          <div class="post-meta mb-2">
+                            <span class="posted-time"
+                              ><i class="fa mr-2"></i>{{producto.marca}}</span
+                            >
+                            <span class="post-author">
+                                {{producto.categoria}}
+                            </span>
+                          </div>
+                          <p>
+                            {{producto.descripcion}}
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                    
+                  <div class="item">
+                    {% if user.is_authenticated %}
+                      <h1>Hola {{ user.username }}</h1>
+                      <a href="{% url 'sign_out' %}">Cerrar sesión</a>
+                      <div class="post-block-wrapper clearfix mb-5">
+                        <div class="post-thumbnail">
+                          {% for coment in coment %}
+                            <div class="fondo_mensaje esquinas">
+                              <div class="titular-comentario contenido-comentario esquinas">
+                                <table cellpadding="0" cellspacing=2>
+                                  <tr>
+                                    
+                                    <td width="10px"></td>
+                                    <td><b>{{coment.usuario}}</b> Dijo el {{coment.created}} </td>
+                                  </tr>
+                                </table>
+                              </div>
+                              <div class="texto_mensaje">{{coment.comentario}}</div>
+                            </div>
+                          {% endfor %}
+                        </div>
+                        <div class="post-content">
+
+                          <form action="{% url 'RegCom' producto.id %}" role="form" method="POST">
+                            {%csrf_token%}
+                              <h2 class="post-title">
+                              <a href="single-post.html"
+                                >Dejanos tu opinión:</a
+                              >
+                              </h2>
+                              <textarea name="usuario">{{ user.username }}</textarea>
+                              <textarea name="producto">{{producto.id}}</textarea>
+                              <textarea id="" name="comentario" rows="4" cols="55">
+                                      Cuantanos sobre los productos    
+                              </textarea>
+                              <input type="submit" value="Enviar" class="btn btn-primary" />
+                          </form>
+                          
+                        </div>
+                      </div>
+                    {% else %}
+                      <h1>Hola si tienes algun comentario o deseas verlos por favor  </h1>
+                      <a href="{% url 'sign_up' %}">Registrate</a>
+                      <a href="{% url 'sign_in' %}">inicia Secion</a>
+                    {% endif %}
+                    
+                  </div>
+
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    {%endblock%}
+</body>
+</html>
