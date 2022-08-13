@@ -1,1 +1,14 @@
-
+Django==4.0.5
+django-ckeditor==6.4.2
+Pillow==9.1.1
+PyMySQL==1.0.2
+cryptography==37.0.4
+cryptograpy==0.0.0
+asgiref==3.5.2
+cffi==1.15.1
+django-js-asset==2.0.0
+pip==22.0.4
+pycparser==2.21
+setuptools==58.1.0
+sqlparse==0.4.2
+tzdata==2022.1
