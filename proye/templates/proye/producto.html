@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    {%block titulo%}Tituloproducto{% endblock %}
+  {%block titulo%}Aprende Jugando{% endblock %}
 </head>
 <body>
     {%block rutalogo%}../static/proye/images/logos/logo.png{%endblock%}
@@ -84,7 +84,7 @@
                               <textarea name="usuario">{{ user.username }}</textarea>
                               <textarea name="producto">{{producto.id}}</textarea>
                               <textarea id="" name="comentario" rows="4" cols="55">
-                                      Cuantanos sobre los productos    
+                                      Cuéntanos sobre los productos    
                               </textarea>
                               <input type="submit" value="Enviar" class="btn btn-primary" />
                           </form>
@@ -92,9 +92,9 @@
                         </div>
                       </div>
                     {% else %}
-                      <h1>Hola si tienes algun comentario o deseas verlos por favor  </h1>
-                      <a href="{% url 'sign_up' %}">Registrate</a>
-                      <a href="{% url 'sign_in' %}">inicia Secion</a>
+                      <h1>Hola, si tienes algún comentario regístrate o inicia sesión para hacerlo</h1>
+                      <a href="{% url 'sign_up' %}">Regístrate</a>
+                      <a href="{% url 'sign_in' %}">inicia Sesión</a>
                     {% endif %}
                     
                   </div>

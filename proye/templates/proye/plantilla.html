@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <title>{%block titulo%}{%endblock%}</title>
+    {%block titulo%}{% endblock %}
     {%load static%}
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta
@@ -250,10 +250,10 @@
                     <a class="nav-link" href="{%url 'Contacto'%}">Contacto</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" href="{%url 'sign_in'%}">Sing in</a>
+                    <a class="nav-link" href="{%url 'sign_in'%}">Ingresar</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" href="{%url 'sign_up'%}">Sing up</a>
+                    <a class="nav-link" href="{%url 'sign_up'%}">Regístrarse</a>
                   </li>
                 </ul>
                 <div class="nav-search ml-auto d-none d-lg-block">
@@ -322,7 +322,7 @@
 
             <div class="copyright-text text-center">
               <p class="mb-0 pancha">
-                Catalogo extraoficial mujm
+                Catálogo extra oficial MUJUM
                 <a href="#" target="_blank">SA de CV</a>
               </p>
             </div>

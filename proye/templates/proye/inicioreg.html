@@ -6,20 +6,20 @@
 
 <section class="login-signup section-padding">
     
-    <div class="container">
-        <div class="row align-items-center justify-content-center">
+    <div class="container" style"display-none">
+        <div class="row align-items-center justify-content-center" >
             <div class="col-lg-7">
                 <div class="login">
                     <div class="text-center"><a href="{% url 'Principal' %}">
                         <img src="../static/proye/images/logos/logo.png" alt="" class="img-fluid"></a></div>
 
-                    <h3 class="mt-4">Inicia Secion</h3>
-                    <p class="mb-5">Entra  Y Diviertete</p>
+                    <h3 class="mt-4">Inicia Sesión</h3>
+                    <p class="mb-5">Entra  y Diviértete con nostros</p>
                      
                      <form method="POST" class="login-form row">
                         {% csrf_token %}
                         {{ form.as_p }}
-                        <input type="submit" name="submit">
+                        <br><div><input type="submit" name="submit" class = "btn btn-primary"></div>
                     </form>  
                 </div>
             </div>
