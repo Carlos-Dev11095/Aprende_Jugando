@@ -78,9 +78,9 @@
                             {%csrf_token%}
                               <h2 class="post-title">
                               <a href="single-post.html"
-                                >Dejanos tu opinión:</a
-                              >
+                                >Dejanos tu opinión:</a>
                               </h2>
+                              Usuario:<br>
                               <textarea disabled name="usuario">{{ user.username }}</textarea>
                               <textarea disabled name="producto" name="hide" style="display:none;">{{producto.id}}</textarea>
                               <textarea id="" name="comentario" rows="4" cols="55" placeholder="Escribe tu comentario"></textarea>
