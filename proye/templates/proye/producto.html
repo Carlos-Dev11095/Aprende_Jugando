@@ -81,11 +81,10 @@
                                 >Dejanos tu opinión:</a
                               >
                               </h2>
-                              <textarea name="usuario">{{ user.username }}</textarea>
-                              <textarea name="producto">{{producto.id}}</textarea>
-                              <textarea id="" name="comentario" rows="4" cols="55">
-                                      Cuéntanos sobre los productos    
-                              </textarea>
+                              <textarea disabled name="usuario">{{ user.username }}</textarea>
+                              <textarea disabled name="producto" name="hide" style="display:none;">{{producto.id}}</textarea>
+                              <textarea id="" name="comentario" rows="4" cols="55" placeholder="Escribe tu comentario"></textarea>
+        
                               <input type="submit" value="Enviar" class="btn btn-primary" />
                           </form>
                           
