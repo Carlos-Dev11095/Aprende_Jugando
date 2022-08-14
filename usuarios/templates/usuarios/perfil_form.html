@@ -3,18 +3,18 @@
 {%block rutaads%}../static/proye/images/news/ad-pro.png{%endblock%}
 {%block logobajo%}../static/proye/images/logos/footer-logo.png{%endblock%}
 {%block body%}
-<section class="login-signup section-padding">
-    <div class="container">
+<section class="signup">
+    <div class="container" style="margin-left:center;border: 0px solid #BORDERCOLOR;">
         <div class="row align-items-center justify-content-center">
             <div class="col-lg-7">
                 <div class="signup">
                     <div class="text-center"><a href="{% url 'Principal' %}"><img src="../static/proye/images/logos/logo.png" alt="" class="img-fluid"></a></div>
                     <h3 class="mt-4">Registrate</h3>
-                    <p class="mb-5">Para que la divercion no termine</p>
+                    <p class="mb-5">y que la diversión no termine</p>
                     <form action="" method="POST" class="login-form row">
                         {% csrf_token %}
                         {{ form.as_p }}
-                        <input type="submit" name="submit">
+                        <input type="submit" name="submit" value="enviar" class = "btn btn-primary"/>
                     </form>
                 </div>
             </div>

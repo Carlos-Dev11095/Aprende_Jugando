@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  {%block titulo%}Aprende Jugando{% endblock %}
+  {%block titulo%}{% endblock %}
 </head>
 <body>
     {%block rutalogo%}../static/proye/images/logos/logo.png{%endblock%}
@@ -81,12 +81,15 @@
                                 >Dejanos tu opinión:</a>
                               </h2>
                               Usuario:<br>
-                              <textarea disabled name="usuario">{{ user.username }}</textarea>
-                              <textarea disabled name="producto" name="hide" style="display:none;">{{producto.id}}</textarea>
+                              <input type="text" readonly class="form-control-plaintext" name="usuario" value="{{ user.username }}" readonly> 
+                            </input>
+                            <input type="text" readonly class="form-control-plaintext" style="display: none;" name="producto" value="{{producto.id}}"> 
+                            </input>
                               <textarea id="" name="comentario" rows="4" cols="55" placeholder="Escribe tu comentario"></textarea>
-        
                               <input type="submit" value="Enviar" class="btn btn-primary" />
                           </form>
+                        </div>
+                      </div>
                           
                         </div>
                       </div>

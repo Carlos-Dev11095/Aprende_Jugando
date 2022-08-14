@@ -23,8 +23,8 @@ class SignUpView(CreateView):
     def form_valid(self, form):
         form.save()
         usuario = form.cleaned_data.get('username')
-        password = form.cleaned_data.get('password1')
-        usuario = authenticate(username=usuario, password=password)
+        constraseña = form.cleaned_data.get('password1')
+        usuario = authenticate(username=usuario, password=constraseña)
         login(self.request, usuario)
         return redirect('/')
 
@@ -67,7 +67,7 @@ def filtrado(request,marca):
 def contacto(request):
     return render(request,"proye/contacto.html")
 
-def secion(request):
+def sesion(request):
     return render(request,"proye/inicioreg.html")
 
 def reg(request):
